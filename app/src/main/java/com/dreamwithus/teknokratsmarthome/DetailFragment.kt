@@ -102,7 +102,7 @@ class DetailFragment : Fragment() {
 
 
             btnLampu.setOnClickListener {
-                Toast.makeText(context,"Lampu" , Toast.LENGTH_SHORT).show()
+
                 if(d.lampu){
                    model?.clickTurn(idRoom,"lampu",false)
                 }else{
@@ -112,7 +112,7 @@ class DetailFragment : Fragment() {
 
 
             btnPintu.setOnClickListener {
-                Toast.makeText(context,"Pintu" , Toast.LENGTH_SHORT).show()
+
                 if(d.pintu){
                     model?.clickTurn(idRoom,"pintu",false)
                 }else{
@@ -121,7 +121,7 @@ class DetailFragment : Fragment() {
             }
 
             btnAC.setOnClickListener {
-                Toast.makeText(context,"AC/Kipas" , Toast.LENGTH_SHORT).show()
+
                 if(d.ac){
                     model?.clickTurn(idRoom,"ac",false)
                 }else{
