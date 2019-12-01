@@ -216,6 +216,7 @@
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
                     android:layout_weight="1"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -224,6 +225,7 @@
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:elevation="3dp"
+                        android:id="@+id/cv_lock"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -259,6 +261,7 @@
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_weight="1"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -267,6 +270,7 @@
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:elevation="3dp"
+                        android:id="@+id/cv_lampu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -302,6 +306,7 @@
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_weight="1"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -309,6 +314,7 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="2dp">
                     <LinearLayout
+                        android:id="@+id/cv_kipas"
                         android:elevation="3dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

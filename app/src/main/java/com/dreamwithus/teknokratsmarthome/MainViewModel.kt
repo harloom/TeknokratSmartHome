@@ -40,6 +40,15 @@ class MainViewModel : ViewModel(){
 
         })
     }
+
+    fun clickTurn(keyRuangan : String ,keyVariable : String ,value : Any){
+        database.child(keyRuangan).child(keyVariable).setValue(value).addOnSuccessListener {
+            print("Success")
+
+        }.addOnFailureListener {
+            println(it.message);
+        }
+    }
 }
 
 object KEY {

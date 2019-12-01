@@ -1,26 +1,26 @@
 package com.dreamwithus.teknokratsmarthome
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.dreamwithus.teknokratsmarthome.models.Iot
-import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailFragment : Fragment() {
     private var model: MainViewModel? = null
-
+    private lateinit var  btnLampu : LinearLayout;
+    private lateinit var  btnAC: LinearLayout;
+    private lateinit var  btnPintu: LinearLayout;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         model = activity?.run {
@@ -39,9 +39,9 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
+        btnAC = view.findViewById(R.id.cv_kipas)
+        btnLampu = view.findViewById(R.id.cv_lampu)
+        btnPintu  = view.findViewById(R.id.cv_lock)
 
 
 
@@ -52,30 +52,30 @@ class DetailFragment : Fragment() {
             model!!.getDataRuang(it)
             model!!.retriveData.observe(this@DetailFragment, Observer { data ->
                 println("liveModel")
-                setUI(data)
+                setUI(data,idRoom)
             })
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun setUI(data: Iot?) {
-        data?.let {
-            tv_kelembaban.text = "${it.kelembaban} %"
-            tv_suhu.text = "${it.suhu} °C"
+    private fun setUI(data: Iot?, idRoom: String) {
+        data?.let {d->
+            tv_kelembaban.text = "${d.kelembaban} %"
+            tv_suhu.text = "${d.suhu} °C"
 
-            if(it.fire){
+            if(d.fire){
                 cv_api.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.on))
             }else{
                 cv_api.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.offf))
             }
 
-            if(it.gas){
+            if(d.gas){
                 cv_asap.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.on))
             }else{
                 cv_asap.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.offf))
             }
 
-            if(it.pintu){
+            if(d.pintu){
                 iv_lock.setImageResource(R.drawable.ic_lock_open )
                 tv_lock.text = "Status : Terbuka"
             }else{
@@ -84,7 +84,7 @@ class DetailFragment : Fragment() {
             }
 
 
-            if(it.lampu){
+            if(d.lampu){
                 iv_lampu.setImageResource(R.drawable.ic_wb_on )
                 tv_lampu.text = "Status : Hidup"
             }else{
@@ -92,7 +92,7 @@ class DetailFragment : Fragment() {
                 tv_lampu.text = "Status : Mati"
             }
 
-            if(it.ac){
+            if(d.ac){
                 iv_kipas.setImageResource(R.drawable.ic_kipas_on )
                 tv_kipas.text = "Status : Hidup"
             }else{
@@ -101,10 +101,42 @@ class DetailFragment : Fragment() {
             }
 
 
+            btnLampu.setOnClickListener {
+                Toast.makeText(context,"Lampu" , Toast.LENGTH_SHORT).show()
+                if(d.lampu){
+                   model?.clickTurn(idRoom,"lampu",false)
+                }else{
+                    model?.clickTurn(idRoom,"lampu",true)
+                }
+            }
+
+
+            btnPintu.setOnClickListener {
+                Toast.makeText(context,"Pintu" , Toast.LENGTH_SHORT).show()
+                if(d.pintu){
+                    model?.clickTurn(idRoom,"pintu",false)
+                }else{
+                    model?.clickTurn(idRoom,"pintu",true)
+                }
+            }
+
+            btnAC.setOnClickListener {
+                Toast.makeText(context,"AC/Kipas" , Toast.LENGTH_SHORT).show()
+                if(d.lampu){
+                    model?.clickTurn(idRoom,"ac",false)
+                }else{
+                    model?.clickTurn(idRoom,"ac",true)
+                }
+            }
+
+
+
 
 
         }
     }
+
+
 
 
 }
