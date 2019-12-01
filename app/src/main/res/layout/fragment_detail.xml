@@ -153,7 +153,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                         <TextView
-
+                            android:id="@+id/tv_api"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -196,7 +196,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                         <TextView
-
+                            android:id="@+id/tv_asap"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"

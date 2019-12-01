@@ -65,14 +65,18 @@ class DetailFragment : Fragment() {
 
             if(d.fire){
                 cv_api.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.on))
+                tv_api.text = "Terdeteksi"
             }else{
                 cv_api.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.offf))
+                tv_api.text = "Tidak Terdeteksi"
             }
 
             if(d.gas){
                 cv_asap.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.on))
+                tv_asap.text = "Terdeteksi"
             }else{
                 cv_asap.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.offf))
+                tv_asap.text = "Terdeteksi"
             }
 
             if(d.pintu){
