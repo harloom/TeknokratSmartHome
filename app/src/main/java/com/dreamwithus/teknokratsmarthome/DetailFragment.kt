@@ -122,7 +122,7 @@ class DetailFragment : Fragment() {
 
             btnAC.setOnClickListener {
                 Toast.makeText(context,"AC/Kipas" , Toast.LENGTH_SHORT).show()
-                if(d.lampu){
+                if(d.ac){
                     model?.clickTurn(idRoom,"ac",false)
                 }else{
                     model?.clickTurn(idRoom,"ac",true)
