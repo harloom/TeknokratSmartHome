@@ -47,7 +47,7 @@ class DetailFragment : Fragment() {
 
         val idRoom = arguments?.getString(KEY.KEYTODETAIL)
         activity?.title = idRoom
-        ruang.text = ""+idRoom;
+        ruang.text = idRoom!!.capitalize()
         idRoom?.let {
             model!!.getDataRuang(it)
             model!!.retriveData.observe(this@DetailFragment, Observer { data ->
