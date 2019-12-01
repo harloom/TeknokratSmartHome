@@ -76,7 +76,7 @@ class DetailFragment : Fragment() {
                 tv_asap.text = "Terdeteksi"
             }else{
                 cv_asap.setCardBackgroundColor(ContextCompat.getColor(context!!,R.color.offf))
-                tv_asap.text = "Terdeteksi"
+                tv_asap.text = "Tidak Terdeteksi"
             }
 
             if(d.pintu){
