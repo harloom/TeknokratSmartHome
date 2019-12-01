@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "31024436004",
+    "firebase_url": "https://smarthome-dfed8.firebaseio.com",
+    "project_id": "smarthome-dfed8",
+    "storage_bucket": "smarthome-dfed8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31024436004:android:70d513929a95a5463999b1",
+        "android_client_info": {
+          "package_name": "com.dreamwithus.teknokratsmarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31024436004-4aoueltp0fcmkjpqei1598gnbolof8pq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dreamwithus.teknokratsmarthome",
+            "certificate_hash": "375acd93d75694f251188c2237c87fc90beb945f"
+          }
+        },
+        {
+          "client_id": "31024436004-gjthem6t1v9d0odu93vrjijne03ekmdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8yjViuYT97eFGX9dkgU1Qdq8GQrXBFrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31024436004-gjthem6t1v9d0odu93vrjijne03ekmdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

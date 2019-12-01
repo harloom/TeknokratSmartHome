@@ -6,6 +6,12 @@
     <string name="kitchen">Ruang Dapur</string>
     <string name="room">Ruangan</string>
     <string name="room2">Ruangan 2</string>
-    <string name="garanso">Garansi</string>
+    <string name="garanso">Garasi</string>
     <string name="livingRoom">Ruang Keluarga</string>
+    <string name="suhu">Suhu</string>
+    <string name="kelembaban">Kelembaban</string>
+    <string name="fire">Api</string>
+    <string name="gas">Asap</string>
+    <string name="detected">Detected</string>
+    <string name="kebun">Kebun</string>
 </resources>

@@ -1,6 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#7ECACACA"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/ruang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/shape"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/suhu"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tv_suhu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0 °C"
+                            android:textColor="#000000"
+                            android:textSize="32sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/kelembaban"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tv_kelembaban"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="78 %"
+                            android:textColor="#000000"
+                            android:textSize="32sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:id="@+id/cv_api"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/fire"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/detected"
+                            android:textColor="#000000"
+                            android:textSize="24sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:id="@+id/cv_asap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/gas"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/detected"
+                            android:textColor="#000000"
+                            android:textSize="24sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/iv_lock"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:text="@string/suhu"
+                            android:textColor="#000000"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_lock_open"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_lock"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="3dp"
+                            android:paddingEnd="3dp"
+                            android:text="Status : Open"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/iv_lampu"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:text="@string/suhu"
+                            android:textColor="#000000"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_wb_on"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_lampu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="3dp"
+                            android:paddingEnd="3dp"
+                            android:text="Status : On"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/iv_kipas"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:text="@string/suhu"
+                            android:textColor="#000000"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_kipas_off"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_kipas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="3dp"
+                            android:paddingEnd="3dp"
+                            android:text="Status : Off"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_bottom"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:elevation="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:text="@string/suhu"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_show_chart"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:text="Grafik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:elevation="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:paddingBottom="16dp"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:text="@string/suhu"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_history"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Riwayat"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    />
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

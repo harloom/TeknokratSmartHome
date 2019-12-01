@@ -1,40 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:title="Smart Home"
-            app:titleTextColor="#ffffff" />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+    android:layout_height="match_parent"
+    android:background="#7ECACACA"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="2dp">
                 <LinearLayout
+                    android:id="@+id/btnDapur"
                     android:elevation="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -42,7 +21,7 @@
                     android:gravity="center"
                     android:paddingBottom="16dp"
                     android:focusable="true"
-                    android:background="?attr/selectableItemBackground"
+                    android:background="@drawable/shape"
                     android:orientation="vertical">
 
                     <ru.nikartm.support.ImageBadgeView
@@ -60,6 +39,7 @@
                         app:ibv_badgeValue="0"
                         app:ibv_fixedBadgeRadius="15dp"
                         app:ibv_visibleBadge="false"
+                        app:tint="@android:color/white"
                         app:layout_constraintEnd_toStartOf="@+id/textView"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,14 +49,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/kitchen"
-                        android:textColor="#000000"
+                        android:textColor="#ffffff"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,7 +72,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:orientation="vertical">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,6 +80,7 @@
                             android:layout_height="200dp"
                             android:clickable="true"
                             android:focusable="true"
+                            android:id="@+id/btnRuang1"
                             android:orientation="horizontal">
 
                             <ru.nikartm.support.ImageBadgeView
@@ -147,6 +127,7 @@
                             android:layout_height="200dp"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
+                            android:id="@+id/btnRuang2"
                             android:focusable="true"
                             android:orientation="horizontal">
 
@@ -193,6 +174,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:clickable="true"
+                            android:id="@+id/btnGarasi"
                             android:focusable="true"
                             android:background="?attr/selectableItemBackground"
                             android:orientation="horizontal">
@@ -254,6 +236,7 @@
                             android:clickable="true"
                             android:focusable="true"
                             android:gravity="center"
+                            android:id="@+id/btnKeluarga"
                             android:background="?attr/selectableItemBackground"
                             android:orientation="vertical">
 
@@ -299,6 +282,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:clickable="true"
+                            android:id="@+id/btnKebun"
                             android:background="?attr/selectableItemBackground"
                             android:focusable="true"
                             android:orientation="horizontal">
@@ -329,7 +313,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:text="@string/garanso"
+                                android:text="@string/kebun"
                                 android:textColor="#000000"
                                 android:textSize="18sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -347,4 +331,3 @@
 
     </androidx.core.widget.NestedScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
